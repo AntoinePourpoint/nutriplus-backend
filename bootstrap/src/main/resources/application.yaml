@@ -1,0 +1,18 @@
+server:
+  port: ${SERVER_PORT}
+
+
+spring:
+  data:
+    redis:
+      database: ${REDIS_DB_INDEX}
+      host: ${REDIS_DB_HOST}
+      port: ${REDIS_DB_PORT}
+      password: ${REDIS_DB_PASSWORD}
+      connect-timeout: 2000
+      timeout: 6000
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${POSTGRES_JDBC_URL}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
