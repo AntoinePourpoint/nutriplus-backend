@@ -16,3 +16,9 @@ spring:
     url: ${POSTGRES_JDBC_URL}
     username: ${POSTGRES_USERNAME}
     password: ${POSTGRES_PASSWORD}
+
+nutriplus:
+  external:
+    apis:
+      openfoodfacts:
+        url: https://world.openfoodfacts.org/api/v3
