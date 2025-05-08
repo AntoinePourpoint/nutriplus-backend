@@ -14,18 +14,18 @@ import org.springframework.web.server.ResponseStatusException;
 @RequestMapping("/api/public/scan")
 public class ScanController {
 
-    private final ScanService scanService;
+  private final ScanService scanService;
 
-    public ScanController(ScanService scanService) {
-        this.scanService = scanService;
-    }
+  public ScanController(ScanService scanService) {
+    this.scanService = scanService;
+  }
 
-    @GetMapping("/{ean}")
-    public Product scan(@PathVariable String ean) {
-        var ean13 = Ean13.of(ean);
+  @GetMapping("/{ean}")
+  public Product scan(@PathVariable String ean) {
+    var ean13 = Ean13.of(ean);
 
-        return scanService
-                .scanProduct(ean13)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, ean));
-    }
+    return scanService
+        .scanProduct(ean13)
+        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, ean));
+  }
 }

@@ -9,8 +9,8 @@ import org.springframework.web.server.ResponseStatusException;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler
-    public ResponseStatusException handleInvalidBarcodeException(InvalidBarcodeException e) {
-        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
-    }
+  @ExceptionHandler
+  public ResponseStatusException handleInvalidBarcodeException(InvalidBarcodeException e) {
+    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+  }
 }
