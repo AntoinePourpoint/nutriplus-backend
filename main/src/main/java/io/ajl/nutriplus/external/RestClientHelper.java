@@ -6,13 +6,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class RestClientHelper {
 
-  private final ExternalProperties externalProperties;
+    private final ExternalProperties externalProperties;
 
-  public RestClientHelper(ExternalProperties externalProperties) {
-    this.externalProperties = externalProperties;
-  }
+    public RestClientHelper(ExternalProperties externalProperties) {
+        this.externalProperties = externalProperties;
+    }
 
-  public String formatUri(String apiName, String endpoint) {
-    return "%s/%s".formatted(externalProperties.apis().get(apiName).url(), endpoint);
-  }
+    public String formatUri(String apiName, String endpoint) {
+        return "%s/%s".formatted(externalProperties.apis().get(apiName).url(), endpoint);
+    }
 }
